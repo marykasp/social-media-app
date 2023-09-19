@@ -10,7 +10,7 @@ export const verifyToken = async (req, res, next) => {
     }
 
     // token starts with Bearer and take everything after
-    if (token.statsWith("Bearer ")) {
+    if (token.startsWith("Bearer ")) {
       token = token.slice(7, token.length).trimLeft();
     }
 
