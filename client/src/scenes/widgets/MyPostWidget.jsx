@@ -55,6 +55,8 @@ const MyPostWidget = ({ picturePath }) => {
       formData.append("picturePath", image.name);
     }
 
+    console.log(formData);
+
     const response = await fetch(`http://localhost:3001/posts`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
@@ -113,7 +115,7 @@ const MyPostWidget = ({ picturePath }) => {
                     <p>Add Image</p>
                   ) : (
                     <FlexBetween>
-                      <Typography color="#000">{image.name}</Typography>
+                      <Typography>{image.name}</Typography>
                       <EditOutlined />
                     </FlexBetween>
                   )}

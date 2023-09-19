@@ -23,23 +23,17 @@ const PostWidget = ({
   likes,
   comments,
 }) => {
-  // open open list or not
   const [isComments, setIsComments] = useState(false);
   const dispatch = useDispatch();
-
-  // grab info from the store
   const token = useSelector((state) => state.token);
-  const user = useSelector((state) => state.user);
   const loggedInUserId = useSelector((state) => state.user._id);
-  // likes on post is a type of map of user id as the key with a value of a boolean - check if user likes the post
   const isLiked = Boolean(likes[loggedInUserId]);
-  // grabs number of likes based on number of keys on map
   const likeCount = Object.keys(likes).length;
 
   const { palette } = useTheme();
   const main = palette.neutral.main;
+  const primary = palette.primary.main;
 
-  // change number of likes
   const patchLike = async () => {
     const response = await fetch(`http://localhost:3001/posts/${postId}/like`, {
       method: "PATCH",
@@ -49,12 +43,8 @@ const PostWidget = ({
       },
       body: JSON.stringify({ userId: loggedInUserId }),
     });
-
-    // return updated post
     const updatedPost = await response.json();
-    console.log(updatedPost);
-    // update the post in the store using map to find the post and transform it
-    dispatch(setPost(updatedPost));
+    dispatch(setPost({ post: updatedPost }));
   };
 
   return (
@@ -72,19 +62,17 @@ const PostWidget = ({
         <img
           width="100%"
           height="auto"
-          alt="picturepost"
+          alt="post"
           style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
           src={`http://localhost:3001/assets/${picturePath}`}
         />
       )}
       <FlexBetween mt="0.25rem">
-        {/* Icon buttons */}
         <FlexBetween gap="1rem">
-          {/* like button */}
           <FlexBetween gap="0.3rem">
             <IconButton onClick={patchLike}>
               {isLiked ? (
-                <FavoriteOutlined sx={{ color: palette.primary.main }} />
+                <FavoriteOutlined sx={{ color: primary }} />
               ) : (
                 <FavoriteBorderOutlined />
               )}
@@ -92,7 +80,6 @@ const PostWidget = ({
             <Typography>{likeCount}</Typography>
           </FlexBetween>
 
-          {/* comment button */}
           <FlexBetween gap="0.3rem">
             <IconButton onClick={() => setIsComments(!isComments)}>
               <ChatBubbleOutlineOutlined />
@@ -101,23 +88,20 @@ const PostWidget = ({
           </FlexBetween>
         </FlexBetween>
 
-        {/* Share post icon */}
         <IconButton>
           <ShareOutlined />
         </IconButton>
       </FlexBetween>
       {isComments && (
         <Box mt="0.5rem">
-          {comments.map((comment, index) => {
-            return (
-              <Box key={`${name}-${index}`}>
-                <Divider />
-                <Typography sx={{ color: main, m: "0.5rem 0", pl: "1rem" }}>
-                  {comment}
-                </Typography>
-              </Box>
-            );
-          })}
+          {comments.map((comment, i) => (
+            <Box key={`${name}-${i}`}>
+              <Divider />
+              <Typography sx={{ color: main, m: "0.5rem 0", pl: "1rem" }}>
+                {comment}
+              </Typography>
+            </Box>
+          ))}
           <Divider />
         </Box>
       )}
