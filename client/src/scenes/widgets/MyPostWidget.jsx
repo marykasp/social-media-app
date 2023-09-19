@@ -113,7 +113,7 @@ const MyPostWidget = ({ picturePath }) => {
                     <p>Add Image</p>
                   ) : (
                     <FlexBetween>
-                      <Typography>{image.name}</Typography>
+                      <Typography color="#000">{image.name}</Typography>
                       <EditOutlined />
                     </FlexBetween>
                   )}

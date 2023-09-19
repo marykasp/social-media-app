@@ -55,10 +55,11 @@ export const getUserPosts = async (req, res) => {
 /* UPDATE */
 export const likePost = async (req, res) => {
   try {
-    // grab post from post id in url
+    // grab post from post id in url and user id that liked the post in the body of the request
     const { id } = req.params;
     const { userId } = req.body;
 
+    // find the post by its id
     const post = await Post.findById(id);
     // check in likes if user id exists - means post has been liked by that person
     // likes object - keys are ids of user

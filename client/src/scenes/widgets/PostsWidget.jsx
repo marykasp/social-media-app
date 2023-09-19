@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setPosts } from "state";
 import PostWidget from "./PostWidget";
+import { Typography } from "@mui/material";
 
 const PostsWidget = ({ userId, isProfile = false }) => {
   const dispatch = useDispatch();
@@ -60,7 +61,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
             <PostWidget
               key={_id}
               postId={_id}
-              userId={userId}
+              postUserId={userId}
               name={`${firstName} ${lastName}`}
               description={description}
               picturePath={picturePath}
