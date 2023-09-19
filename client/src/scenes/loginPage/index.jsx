@@ -14,7 +14,7 @@ const LoginPage = () => {
         textAlign="center"
       >
         <Typography color="primary" fontWeight="bold" fontSize="32px">
-          SocialPedia
+          SocialSphere
         </Typography>
       </Box>
 
