@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import UserWidget from "scenes/widgets/UserWidget";
 import MyPostWidget from "scenes/widgets/MyPostWidget";
 import PostsWidget from "scenes/widgets/PostsWidget";
+import AdvertWidget from "scenes/widgets/AdvertWidget";
+import FriendsList from "scenes/widgets/FriendsList";
 
 const HomePage = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
@@ -31,7 +33,13 @@ const HomePage = () => {
           <PostsWidget userId={_id} />
         </Box>
         {/* friends list show on desktop */}
-        {isNonMobileScreens && <Box flexBasis="26%"></Box>}
+        {isNonMobileScreens && (
+          <Box flexBasis="26%">
+            <AdvertWidget />
+            <Box mb="1rem" />
+            <FriendsList userId={_id} />
+          </Box>
+        )}
       </Box>
     </Box>
   );
