@@ -1,7 +1,8 @@
-
 # SocialSphere - A Social Media Clone
 
 Welcome to SocialSphere, a full-stack web application that replicates the core features of a popular social media platform. This project showcases my skills in web development, front-end design, and database management.
+
+![](assets/socialsphere.gif)
 
 ## Table of Contents
 
