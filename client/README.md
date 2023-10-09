@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# SocialSphere - A Social Media Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to SocialSphere, a full-stack web application that replicates the core features of a popular social media platform. This project showcases my skills in web development, front-end design, and database management.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- Features
+- Technologies Used
+- Setup
+- Usage
 
-### `npm start`
+### Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+User Authentication: Secure user registration and login functionality.
+Profile Management: Edit and update user profiles with avatars and personal information.
+Posts: Create, edit, and delete posts with text and images.
+Comments: Leave comments on posts.
+Likes: Like and unlike posts.
+Friend Requests: Send and accept friend requests.
+News Feed: See posts from friends and self on the main feed.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Technologies Used
 
-### `npm test`
+Front-end:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- HTML, CSS, JavaScript
+- React.js
+- Redux for state management
+- Material UI
 
-### `npm run build`
+Back-end:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js with Express.js
+- MongoDB for data storage
+- Mongoose for database management
+- JWT for authentication
+- RESTful API design
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Setup
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
 
-### `npm run eject`
+`git clone https://github.com/yourusername/social-sphere.git`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Navigate to the project directory:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`cd social-media-app`
+`cd client`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Install dependencies:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+`npm install`
+Set up environment variables:
+Create a .env file in the root directory and provide the necessary configuration details (e.g., database connection URI, secret key).
 
-## Learn More
+4. Start the development server:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`npm start`
+Visit http://localhost:3000 in your browser to access the application.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Usage
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Register for an account or log in with existing credentials.
+Explore the features of SocialSphere, such as creating posts, sending friend requests, and interacting with others.
+Customize your profile and stay connected with friends.
+Contributing
+Contributions to this project are welcome. Feel free to open issues or submit pull requests to improve the application.
